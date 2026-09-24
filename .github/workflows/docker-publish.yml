@@ -1,6 +1,6 @@
 name: HolyClaude - Docker release
 
-run-name: v1.6.2
+run-name: v1.6.3
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
       published_version:
         description: "Published HolyClaude version to smoke-test"
         required: true
-        default: "1.6.2"
+        default: "1.6.3"
         type: string
   push:
     branches:
@@ -86,10 +86,10 @@ jobs:
           grep -Fq "release: ${release}" security/immutable-inputs.yml
           grep -Fq "@${release#v}?variant=full" security/openvex.json
           grep -Fq "@${release#v}?variant=slim" security/openvex.json
-          baseline="183f2a913c7618e652aa23f2ba40d1f9e3b04f92"
+          baseline="1bf4ce19ea92308dc659fef7a7e15eab67f25685"
           test "$(git cat-file -p HEAD | grep -c '^parent ')" -eq 1
           test "$(git rev-parse HEAD^)" = "${baseline}"
-          test "$(git rev-parse 'v1.6.1^{commit}')" = "183f2a913c7618e652aa23f2ba40d1f9e3b04f92"
+          test "$(git rev-parse 'v1.6.2^{commit}')" = "1bf4ce19ea92308dc659fef7a7e15eab67f25685"
           if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
             git fetch --no-tags origin master
             test "$(git rev-parse origin/master)" = "${GITHUB_SHA}"
@@ -213,7 +213,7 @@ jobs:
         timeout-minutes: 180
         run: |
           set -euo pipefail
-          baseline="183f2a913c7618e652aa23f2ba40d1f9e3b04f92"
+          baseline="1bf4ce19ea92308dc659fef7a7e15eab67f25685"
           if git diff --quiet "${baseline}" -- \
             Dockerfile \
             scripts/build-ffmpeg-security-backport.sh \

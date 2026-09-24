@@ -31,7 +31,6 @@ const evaluator = resolve('scripts/evaluate-security-report.mjs');
 const renewedHighOwners = new Map([
   ['Debian Bookworm base', 12],
   ['Debian Bookworm bubblewrap', 4],
-  ['Debian Bookworm libde265', 12],
   ['HolyClaude bundled extract-zip', 4],
   ['Junie CLI', 22],
 ]);
@@ -45,7 +44,7 @@ test('renews only the previously accepted High scope through September 25', () =
     review.expiresAt === '2026-09-25',
   );
 
-  assert.equal(renewed.length, 54);
+  assert.equal(renewed.length, 42);
   for (const [owner, count] of renewedHighOwners) {
     assert.equal(renewed.filter((review) => review.owner === owner).length, count, owner);
   }
@@ -129,17 +128,17 @@ test('relocates Junie review and VEX bindings to exact stable 3196.5 identities'
   assert.doesNotMatch(JSON.stringify({ junie, statements: vex.statements }), /3196\\?\.4|24cc3269086af0d31f475229b138bd3f965bbde8d41f879cc1ee38a4a94aff9f/);
 });
 
-test('publishes the OpenVEX document only under the v1.6.2 product identity', () => {
+test('publishes the OpenVEX document only under the v1.6.3 product identity', () => {
   const productIds = vex.statements.flatMap((statement) =>
     statement.products.map((product) => product['@id']),
   );
 
-  assert.equal(ledger.reviews.length, 593);
+  assert.equal(ledger.reviews.length, 596);
   assert.equal(vex.statements.length, 113);
   assert.equal(productIds.length, 234);
-  assert.equal(vex['@id'], 'urn:holyclaude:openvex:v1.6.2');
-  assert.equal(vex.timestamp, '2026-09-18T00:00:00Z');
-  assert.ok(productIds.every((id) => id.includes('/holyclaude@1.6.2?variant=')));
+  assert.equal(vex['@id'], 'urn:holyclaude:openvex:v1.6.3');
+  assert.equal(vex.timestamp, '2026-09-24T00:00:00Z');
+  assert.ok(productIds.every((id) => id.includes('/holyclaude@1.6.3?variant=')));
   assert.ok(productIds.every((id) => !id.includes('@1.6.1')));
 });
 
@@ -209,8 +208,8 @@ test('maps the seven new BIND advisories to 56 exact target and package-group ap
         assert.match(statement.impact_statement, /named(?: server| resolver| executable)?|resolver/);
         assert.match(statement.impact_statement, /not installed|absent/);
         assert.deepEqual(statement.products.map((product) => product['@id']).sort(), [
-          `pkg:oci/docker.io/coderluii/holyclaude@1.6.2?variant=${variant}`,
-          `pkg:oci/ghcr.io/coderluii/holyclaude@1.6.2?variant=${variant}`,
+          `pkg:oci/docker.io/coderluii/holyclaude@1.6.3?variant=${variant}`,
+          `pkg:oci/ghcr.io/coderluii/holyclaude@1.6.3?variant=${variant}`,
         ]);
         const expectedPurls = names.map((name) => {
           const packageArch = name === 'dnsutils' ? 'all' : arch;

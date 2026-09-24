@@ -169,22 +169,22 @@ const inventory = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
 const variant = process.argv[3];
 const common = {
   '@cloudcli-ai/cloudcli': '1.37.3',
-  '@google/gemini-cli': '0.60.0',
-  '@openai/codex': '0.155.0',
+  '@google/gemini-cli': '0.61.0',
+  '@openai/codex': '0.156.1',
   concurrently: '10.0.5',
   'dotenv-cli': '11.0.0',
   esbuild: '0.28.2',
-  eslint: '10.10.0',
+  eslint: '10.11.0',
   nodemon: '3.1.14',
   npm: '12.0.2',
   playwright: '1.63.0',
-  pnpm: '12.4.2',
-  prettier: '3.9.8',
+  pnpm: '12.6.0',
+  prettier: '3.9.9',
   serve: '14.2.6',
   'task-master-ai': '0.43.1',
   tsx: '4.23.13',
   typescript: '7.0.2',
-  vite: '8.3.0',
+  vite: '8.3.1',
 };
 const full = {
   '@cloudflare/next-on-pages': '1.13.16',
@@ -197,7 +197,7 @@ const full = {
   'json-server': '0.17.4',
   lighthouse: '13.4.1',
   'netlify-cli': '27.8.0',
-  'opencode-ai': '1.18.31',
+  'opencode-ai': '1.18.32',
   pm2: '7.0.4',
   prisma: '7.10.0',
   'sharp-cli': '6.1.0',
@@ -287,7 +287,8 @@ assert_runtime_identity() {
   require_eq "PUPPETEER_EXECUTABLE_PATH" "${PUPPETEER_EXECUTABLE_PATH:-}" "/usr/bin/chromium"
   test -x /usr/bin/chromium
   test -x /usr/lib/chromium/chromium
-  require_eq "Chromium Debian package version" "$(dpkg-query -W -f='${Version}' chromium)" "153.0.8010.47-2~deb12u1"
+  require_eq "Chromium Debian package version" "$(dpkg-query -W -f='${Version}' chromium)" "153.0.8010.52-1~deb12u1"
+  require_eq "libde265 runtime package version" "$(dpkg-query -W -f='${Version}' libde265-0)" "1.0.11-1+deb12u3"
   pcre2_version="$(dpkg-query -W -f='${Version}' libpcre2-8-0)"
   dpkg --compare-versions "$pcre2_version" ge "10.42-1+deb12u1"
   evidence "pcre2_version=$pcre2_version"
@@ -302,15 +303,15 @@ assert_runtime_identity() {
   require_eq "npm tar dependency" "$(node -p "require('/usr/local/lib/node_modules/npm/package.json').dependencies.tar")" "7.5.22"
   node -e "if (typeof require('/usr/local/lib/node_modules/npm/node_modules/tar').list !== 'function') throw new Error('invalid npm tar module')"
   npm --prefix /usr/local/lib/node_modules/npm ls tar --all >/dev/null
-  require_eq "pnpm version" "$(pnpm --version)" "12.4.2"
-  require_eq "Vite package version" "$(node -p "require('/usr/local/lib/node_modules/vite/package.json').version")" "8.3.0"
-  require_eq "Prettier package version" "$(node -p "require('/usr/local/lib/node_modules/prettier/package.json').version")" "3.9.8"
-  require_eq "Codex package version" "$(node -p "require('/usr/local/lib/node_modules/@openai/codex/package.json').version")" "0.155.0"
-  require_eq "Gemini package version" "$(node -p "require('/usr/local/lib/node_modules/@google/gemini-cli/package.json').version")" "0.60.0"
+  require_eq "pnpm version" "$(pnpm --version)" "12.6.0"
+  require_eq "Vite package version" "$(node -p "require('/usr/local/lib/node_modules/vite/package.json').version")" "8.3.1"
+  require_eq "Prettier package version" "$(node -p "require('/usr/local/lib/node_modules/prettier/package.json').version")" "3.9.9"
+  require_eq "Codex package version" "$(node -p "require('/usr/local/lib/node_modules/@openai/codex/package.json').version")" "0.156.1"
+  require_eq "Gemini package version" "$(node -p "require('/usr/local/lib/node_modules/@google/gemini-cli/package.json').version")" "0.61.0"
   require_eq "tree-sitter language pack" "$(python3 -c 'import importlib.metadata; print(importlib.metadata.version("tree-sitter-language-pack"))')" "1.20.0"
   require_eq "tqdm package version" "$(python3 -c 'import importlib.metadata; print(importlib.metadata.version("tqdm"))')" "4.70.1"
   require_eq "fzf version" "$(fzf --version | awk '{print $1}')" "0.74.4"
-  require_eq "Claude Code version" "$(claude --version | awk '{print $1}')" "2.1.276"
+  require_eq "Claude Code version" "$(claude --version | awk '{print $1}')" "2.1.281"
   require_eq "GitHub CLI version" "$(gh --version | awk 'NR == 1 {print $3}')" "2.101.0"
   require_eq "Cursor Agent build" "$(cursor-agent --version)" "2026.09.15-d2fe57e"
   local web_terminal_esbuild_arch
@@ -418,8 +419,8 @@ assert_runtime_identity() {
     require_eq "Marp xmldom package version" "$(node -p "require('/usr/local/lib/node_modules/@marp-team/marp-cli/node_modules/@xmldom/xmldom/package.json').version")" "0.9.12"
     npm --prefix /usr/local/lib/node_modules/@marp-team/marp-cli ls @xmldom/xmldom --all >/dev/null
     node -e "const { DOMImplementation, XMLSerializer } = require('/usr/local/lib/node_modules/@marp-team/marp-cli/node_modules/@xmldom/xmldom'); const implementation = new DOMImplementation(); const doctype = implementation.createDocumentType('html', '', ''); doctype.name = 'html><injected'; const document = implementation.createDocument(null, 'root', doctype); try { new XMLSerializer().serializeToString(document, { requireWellFormed: true }); throw new Error('xmldom accepted an injected doctype name'); } catch (error) { if (error.name !== 'InvalidStateError') throw error; } console.log('xmldom_require_well_formed=ok')"
-    require_eq "OpenCode package version" "$(node -p "require('/usr/local/lib/node_modules/opencode-ai/package.json').version")" "1.18.31"
-    require_eq "OpenCode CLI version" "$(opencode --version)" "1.18.31"
+    require_eq "OpenCode package version" "$(node -p "require('/usr/local/lib/node_modules/opencode-ai/package.json').version")" "1.18.32"
+    require_eq "OpenCode CLI version" "$(opencode --version)" "1.18.32"
     require_eq "Pi package version" "$(node -p "require('/usr/local/lib/node_modules/@earendil-works/pi-coding-agent/package.json').version")" "0.85.1"
     require_eq "Pi undici dependency" "$(node -p "require('/usr/local/lib/node_modules/@earendil-works/pi-coding-agent/package.json').dependencies.undici")" "8.10.2"
     require_eq "Pi undici package version" "$(node -p "require('/usr/local/lib/node_modules/@earendil-works/pi-coding-agent/node_modules/undici/package.json').version")" "8.10.2"

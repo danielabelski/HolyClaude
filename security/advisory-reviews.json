@@ -3,6 +3,702 @@
   "policy": "security/advisory-review-policy.md",
   "reviews": [
     {
+      "id": "v163-perl-cve-2026-82560-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-82560"
+      ],
+      "component": {
+        "names": [
+          "libperl5.36",
+          "perl",
+          "perl-base",
+          "perl-modules-5.36"
+        ],
+        "versions": [
+          "5.36.0-7+deb12u3"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libperl5\\.36/copyright$",
+          "^/usr/share/doc/perl-base/copyright$",
+          "^/usr/share/doc/perl-modules-5\\.36/copyright$",
+          "^/usr/share/doc/perl/copyright$",
+          "^/var/lib/dpkg/info/libperl5\\.36:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libperl5\\.36:arm64\\.md5sums$",
+          "^/var/lib/dpkg/info/perl-base\\.list$",
+          "^/var/lib/dpkg/info/perl-base\\.md5sums$",
+          "^/var/lib/dpkg/info/perl-base\\.postinst$",
+          "^/var/lib/dpkg/info/perl-base\\.postrm$",
+          "^/var/lib/dpkg/info/perl-base\\.preinst$",
+          "^/var/lib/dpkg/info/perl-base\\.prerm$",
+          "^/var/lib/dpkg/info/perl-modules-5\\.36\\.list$",
+          "^/var/lib/dpkg/info/perl-modules-5\\.36\\.md5sums$",
+          "^/var/lib/dpkg/info/perl\\.conffiles$",
+          "^/var/lib/dpkg/info/perl\\.list$",
+          "^/var/lib/dpkg/info/perl\\.md5sums$",
+          "^/var/lib/dpkg/info/perl\\.postinst$",
+          "^/var/lib/dpkg/info/perl\\.postrm$",
+          "^/var/lib/dpkg/info/perl\\.preinst$",
+          "^/var/lib/dpkg/info/perl\\.prerm$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-82560"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to these exact affected and unfixed Bookworm runtime package tuples. This review expires on 2026-10-01, and the packages remain affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full",
+        "slim"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-libheif1-cve-2026-84384-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-84384"
+      ],
+      "component": {
+        "names": [
+          "libheif1"
+        ],
+        "versions": [
+          "1.15.1-1+deb12u1"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libheif1/copyright$",
+          "^/var/lib/dpkg/info/libheif1:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libheif1:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-84384"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm runtime package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full",
+        "slim"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-full-libheif-dev-cve-2026-84384-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-84384"
+      ],
+      "component": {
+        "names": [
+          "libheif-dev"
+        ],
+        "versions": [
+          "1.15.1-1+deb12u1"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libheif-dev/copyright$",
+          "^/var/lib/dpkg/info/libheif-dev:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libheif-dev:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-84384"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm Full-image development package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-libheif1-cve-2026-84447-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-84447"
+      ],
+      "component": {
+        "names": [
+          "libheif1"
+        ],
+        "versions": [
+          "1.15.1-1+deb12u1"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libheif1/copyright$",
+          "^/var/lib/dpkg/info/libheif1:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libheif1:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-84447"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm runtime package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full",
+        "slim"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-full-libheif-dev-cve-2026-84447-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-84447"
+      ],
+      "component": {
+        "names": [
+          "libheif-dev"
+        ],
+        "versions": [
+          "1.15.1-1+deb12u1"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libheif-dev/copyright$",
+          "^/var/lib/dpkg/info/libheif-dev:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libheif-dev:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-84447"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm Full-image development package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-libheif1-cve-2026-84446-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-84446"
+      ],
+      "component": {
+        "names": [
+          "libheif1"
+        ],
+        "versions": [
+          "1.15.1-1+deb12u1"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libheif1/copyright$",
+          "^/var/lib/dpkg/info/libheif1:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libheif1:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-84446"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm runtime package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full",
+        "slim"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-full-libheif-dev-cve-2026-84446-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-84446"
+      ],
+      "component": {
+        "names": [
+          "libheif-dev"
+        ],
+        "versions": [
+          "1.15.1-1+deb12u1"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libheif-dev/copyright$",
+          "^/var/lib/dpkg/info/libheif-dev:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libheif-dev:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-84446"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm Full-image development package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-libheif1-cve-2026-84444-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-84444"
+      ],
+      "component": {
+        "names": [
+          "libheif1"
+        ],
+        "versions": [
+          "1.15.1-1+deb12u1"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libheif1/copyright$",
+          "^/var/lib/dpkg/info/libheif1:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libheif1:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-84444"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm runtime package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full",
+        "slim"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-full-libheif-dev-cve-2026-84444-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-84444"
+      ],
+      "component": {
+        "names": [
+          "libheif-dev"
+        ],
+        "versions": [
+          "1.15.1-1+deb12u1"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libheif-dev/copyright$",
+          "^/var/lib/dpkg/info/libheif-dev:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libheif-dev:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-84444"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm Full-image development package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-libexpat1-cve-2026-93990-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-93990"
+      ],
+      "component": {
+        "names": [
+          "libexpat1"
+        ],
+        "versions": [
+          "2.5.0-1+deb12u3"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libexpat1/copyright$",
+          "^/var/lib/dpkg/info/libexpat1:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libexpat1:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-93990"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm runtime package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full",
+        "slim"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-full-libexpat1-dev-cve-2026-93990-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-93990"
+      ],
+      "component": {
+        "names": [
+          "libexpat1-dev"
+        ],
+        "versions": [
+          "2.5.0-1+deb12u3"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libexpat1-dev/copyright$",
+          "^/var/lib/dpkg/info/libexpat1-dev:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libexpat1-dev:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-93990"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm Full-image development package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-libxrender1-cve-2026-88807-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-88807"
+      ],
+      "component": {
+        "names": [
+          "libxrender1"
+        ],
+        "versions": [
+          "1:0.9.10-1.1"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libxrender1/copyright$",
+          "^/var/lib/dpkg/info/libxrender1:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libxrender1:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-88807"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm runtime package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full",
+        "slim"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-full-libxrender-dev-cve-2026-88807-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-88807"
+      ],
+      "component": {
+        "names": [
+          "libxrender-dev"
+        ],
+        "versions": [
+          "1:0.9.10-1.1"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libxrender-dev/copyright$",
+          "^/var/lib/dpkg/info/libxrender-dev:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libxrender-dev:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-88807"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm Full-image development package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-redis-tools-cve-2026-92925-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-92925"
+      ],
+      "component": {
+        "names": [
+          "redis-tools"
+        ],
+        "versions": [
+          "5:7.0.15-1~deb12u9"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/redis-tools/copyright$",
+          "^/var/lib/dpkg/info/redis-tools\\.list$",
+          "^/var/lib/dpkg/info/redis-tools\\.md5sums$",
+          "^/var/lib/dpkg/info/redis-tools\\.postinst$",
+          "^/var/lib/dpkg/info/redis-tools\\.postrm$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-92925"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full",
+        "slim"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-libx11-cve-2026-88806-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-88806"
+      ],
+      "component": {
+        "names": [
+          "libx11-6",
+          "libx11-data",
+          "libx11-xcb1"
+        ],
+        "versions": [
+          "2:1.8.4-2+deb12u2"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libx11-6/copyright$",
+          "^/usr/share/doc/libx11-data/copyright$",
+          "^/usr/share/doc/libx11-xcb1/copyright$",
+          "^/var/lib/dpkg/info/libx11-6:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libx11-6:arm64\\.md5sums$",
+          "^/var/lib/dpkg/info/libx11-data\\.list$",
+          "^/var/lib/dpkg/info/libx11-data\\.md5sums$",
+          "^/var/lib/dpkg/info/libx11-xcb1:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libx11-xcb1:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-88806"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to these exact affected and unfixed Bookworm runtime package tuples. This review expires on 2026-10-01, and the packages remain affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full",
+        "slim"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
+      "id": "v163-full-libx11-dev-cve-2026-88806-high-exception",
+      "vulnerabilities": [
+        "CVE-2026-88806"
+      ],
+      "component": {
+        "names": [
+          "libx11-dev"
+        ],
+        "versions": [
+          "2:1.8.4-2+deb12u2"
+        ],
+        "types": [
+          "deb"
+        ],
+        "locationPatterns": [
+          "^/usr/share/doc/libx11-dev/copyright$",
+          "^/var/lib/dpkg/info/libx11-dev:amd64\\.md5sums$",
+          "^/var/lib/dpkg/info/libx11-dev:arm64\\.md5sums$",
+          "^/var/lib/dpkg/status$"
+        ]
+      },
+      "disposition": "high_exception",
+      "effectiveSeverity": "High",
+      "owner": "Debian Bookworm base",
+      "authority": {
+        "name": "Debian Security Tracker",
+        "url": "https://security-tracker.debian.org/tracker/CVE-2026-88806"
+      },
+      "reviewedAt": "2026-09-24",
+      "expiresAt": "2026-10-01",
+      "rationale": "The September 24 maintainer direction to proceed despite unresolved upstream packages is applied narrowly to this exact affected and unfixed Bookworm Full-image development package tuple. This review expires on 2026-10-01, and the package remains affected and unfixed.",
+      "approvedBy": "CoderLuii",
+      "variants": [
+        "full"
+      ],
+      "architectures": [
+        "amd64",
+        "arm64"
+      ]
+    },
+    {
       "id": "zlib-minizip-not-built",
       "vulnerabilities": [
         "CVE-2023-45853"
@@ -2332,54 +3028,6 @@
         "full"
       ],
       "approvedBy": "CoderLuii",
-      "architectures": [
-        "amd64",
-        "arm64"
-      ]
-    },
-    {
-      "id": "v155-libde265-high-exception",
-      "vulnerabilities": [
-        "CVE-2026-33164",
-        "CVE-2026-49295",
-        "CVE-2026-49346"
-      ],
-      "component": {
-        "names": [
-          "libde265-0",
-          "libde265-dev"
-        ],
-        "versions": [
-          "1.0.11-1+deb12u2"
-        ],
-        "types": [
-          "deb"
-        ],
-        "locationPatterns": [
-          "^/usr/share/doc/libde265-0/copyright$",
-          "^/usr/share/doc/libde265-dev/copyright$",
-          "^/var/lib/dpkg/info/libde265-0:amd64\\.md5sums$",
-          "^/var/lib/dpkg/info/libde265-0:arm64\\.md5sums$",
-          "^/var/lib/dpkg/info/libde265-dev:amd64\\.md5sums$",
-          "^/var/lib/dpkg/info/libde265-dev:arm64\\.md5sums$",
-          "^/var/lib/dpkg/status$"
-        ]
-      },
-      "disposition": "high_exception",
-      "effectiveSeverity": "High",
-      "owner": "Debian Bookworm base",
-      "authority": {
-        "name": "Debian Security Tracker",
-        "url": "https://security-tracker.debian.org/tracker/source-package/libde265"
-      },
-      "reviewedAt": "2026-09-01",
-      "expiresAt": "2026-10-01",
-      "rationale": "Debian Bookworm does not yet provide a repository package that resolves these exact findings. HolyClaude retains the package for the documented full or common toolset, and this exact exception expires before the next release review.",
-      "approvedBy": "CoderLuii",
-      "variants": [
-        "full",
-        "slim"
-      ],
       "architectures": [
         "amd64",
         "arm64"
@@ -20345,306 +20993,6 @@
     "variants": ["slim"],
     "architectures": ["arm64"],
     "vexStatement": "urn:holyclaude:vex:slim-arm64-libxml2-cve-2026-74860-python-binding"
-  },
-  {
-    "id": "v161-full-amd64-libde265-0-cve-2026-54240-high-exception",
-    "vulnerabilities": ["CVE-2026-54240"],
-    "component": {
-      "names": ["libde265-0"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-0/copyright$",
-        "^/var/lib/dpkg/info/libde265-0:amd64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54240"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["full"],
-    "architectures": ["amd64"]
-  },
-  {
-    "id": "v161-full-amd64-libde265-dev-cve-2026-54240-high-exception",
-    "vulnerabilities": ["CVE-2026-54240"],
-    "component": {
-      "names": ["libde265-dev"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-dev/copyright$",
-        "^/var/lib/dpkg/info/libde265-dev:amd64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54240"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["full"],
-    "architectures": ["amd64"]
-  },
-  {
-    "id": "v161-full-amd64-libde265-0-cve-2026-54241-high-exception",
-    "vulnerabilities": ["CVE-2026-54241"],
-    "component": {
-      "names": ["libde265-0"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-0/copyright$",
-        "^/var/lib/dpkg/info/libde265-0:amd64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54241"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["full"],
-    "architectures": ["amd64"]
-  },
-  {
-    "id": "v161-full-amd64-libde265-dev-cve-2026-54241-high-exception",
-    "vulnerabilities": ["CVE-2026-54241"],
-    "component": {
-      "names": ["libde265-dev"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-dev/copyright$",
-        "^/var/lib/dpkg/info/libde265-dev:amd64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54241"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["full"],
-    "architectures": ["amd64"]
-  },
-  {
-    "id": "v161-full-arm64-libde265-0-cve-2026-54240-high-exception",
-    "vulnerabilities": ["CVE-2026-54240"],
-    "component": {
-      "names": ["libde265-0"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-0/copyright$",
-        "^/var/lib/dpkg/info/libde265-0:arm64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54240"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["full"],
-    "architectures": ["arm64"]
-  },
-  {
-    "id": "v161-full-arm64-libde265-dev-cve-2026-54240-high-exception",
-    "vulnerabilities": ["CVE-2026-54240"],
-    "component": {
-      "names": ["libde265-dev"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-dev/copyright$",
-        "^/var/lib/dpkg/info/libde265-dev:arm64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54240"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["full"],
-    "architectures": ["arm64"]
-  },
-  {
-    "id": "v161-full-arm64-libde265-0-cve-2026-54241-high-exception",
-    "vulnerabilities": ["CVE-2026-54241"],
-    "component": {
-      "names": ["libde265-0"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-0/copyright$",
-        "^/var/lib/dpkg/info/libde265-0:arm64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54241"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["full"],
-    "architectures": ["arm64"]
-  },
-  {
-    "id": "v161-full-arm64-libde265-dev-cve-2026-54241-high-exception",
-    "vulnerabilities": ["CVE-2026-54241"],
-    "component": {
-      "names": ["libde265-dev"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-dev/copyright$",
-        "^/var/lib/dpkg/info/libde265-dev:arm64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54241"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["full"],
-    "architectures": ["arm64"]
-  },
-  {
-    "id": "v161-slim-amd64-libde265-cve-2026-54240-high-exception",
-    "vulnerabilities": ["CVE-2026-54240"],
-    "component": {
-      "names": ["libde265-0"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-0/copyright$",
-        "^/var/lib/dpkg/info/libde265-0:amd64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54240"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["slim"],
-    "architectures": ["amd64"]
-  },
-  {
-    "id": "v161-slim-amd64-libde265-cve-2026-54241-high-exception",
-    "vulnerabilities": ["CVE-2026-54241"],
-    "component": {
-      "names": ["libde265-0"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-0/copyright$",
-        "^/var/lib/dpkg/info/libde265-0:amd64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54241"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["slim"],
-    "architectures": ["amd64"]
-  },
-  {
-    "id": "v161-slim-arm64-libde265-cve-2026-54240-high-exception",
-    "vulnerabilities": ["CVE-2026-54240"],
-    "component": {
-      "names": ["libde265-0"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-0/copyright$",
-        "^/var/lib/dpkg/info/libde265-0:arm64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54240"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["slim"],
-    "architectures": ["arm64"]
-  },
-  {
-    "id": "v161-slim-arm64-libde265-cve-2026-54241-high-exception",
-    "vulnerabilities": ["CVE-2026-54241"],
-    "component": {
-      "names": ["libde265-0"],
-      "versions": ["1.0.11-1+deb12u2"],
-      "types": ["deb"],
-      "locationPatterns": [
-        "^/usr/share/doc/libde265-0/copyright$",
-        "^/var/lib/dpkg/info/libde265-0:arm64\\.md5sums$",
-        "^/var/lib/dpkg/status$"
-      ]
-    },
-    "sourcePackage": "libde265",
-    "disposition": "high_exception",
-    "effectiveSeverity": "High",
-    "owner": "Debian Bookworm libde265",
-    "authority": {"name": "Debian Security Tracker", "url": "https://security-tracker.debian.org/tracker/CVE-2026-54241"},
-    "reviewedAt": "2026-09-18",
-    "expiresAt": "2026-09-25",
-    "rationale": "Crafted HEVC input can cause out-of-bounds memory access, memory corruption, or a crash. Debian Bookworm libde265 1.0.11-1+deb12u2 remains vulnerable with no fixed Bookworm package, and no product exploit has been demonstrated; this exact temporary High exception does not assume non-reachability.",
-    "approvedBy": "CoderLuii",
-    "variants": ["slim"],
-    "architectures": ["arm64"]
   },
     {
       "id": "v162-full-amd64-bind-clients-cve-2026-19666-not-affected",

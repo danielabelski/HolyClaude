@@ -9,7 +9,7 @@
 
 ARG VARIANT=full
 
-FROM golang:1.27.1-bookworm@sha256:648f440f42a0958804efb24df176f806f9d353b41f1c0627f666428e40310f6b AS esbuild-builder
+FROM golang:1.27.1-bookworm@sha256:69a7b9788769bec032d238959b61854e9ae87f57be9029ec04e9885fabf99195 AS esbuild-builder
 
 ARG TARGETARCH
 RUN case "$TARGETARCH" in amd64) ;; arm64) ;; *) echo "Unsupported TARGETARCH: $TARGETARCH" >&2; exit 1;; esac; \
@@ -47,7 +47,7 @@ RUN test -x /usr/local/bin/build-ffmpeg-security-backport.sh && \
     TARGETARCH="$TARGETARCH" /usr/local/bin/build-ffmpeg-security-backport.sh; \
     fi
 
-FROM python:3.14.7-slim-bookworm@sha256:9ab8d9c8514b44f90cf0029dd42fdd7e9e211e639c8b995304cc04568dee900f AS python-runtime
+FROM python:3.14.7-slim-bookworm@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 AS python-runtime
 
 FROM node:26.9.0-bookworm-slim@sha256:c8fedd782bcd1b68d8a7d1ed2577b5f820eba820871323f605292651ff11e3c6
 
@@ -55,7 +55,7 @@ COPY --from=python-runtime /usr/local/ /usr/local/
 RUN test "$(python3 --version)" = "Python 3.14.7" && \
     python3 -m pip --version >/dev/null
 
-ARG HOLYCLAUDE_VERSION=1.6.2
+ARG HOLYCLAUDE_VERSION=1.6.3
 LABEL org.opencontainers.image.source=https://github.com/CoderLuii/HolyClaude
 LABEL org.opencontainers.image.version=${HOLYCLAUDE_VERSION}
 
@@ -67,17 +67,17 @@ ARG S6_ARCHIVE_SHA256_ARM64=b17f17a82e7a515c682a91edaf2ffdabb73f891981b6c1fd7121
 ARG FZF_VERSION=0.74.4
 ARG FZF_ARCHIVE_SHA256_AMD64=05e6813a337cc722c3ed07e54a764b75cc5d671e2e60459db0ba696ee5fa7504
 ARG FZF_ARCHIVE_SHA256_ARM64=5d673b849f494f0d64ec471d8640b153ca8849e3846a31da17abdcfce8df6b46
-ARG CHROMIUM_DEBIAN_VERSION=153.0.8010.47-2~deb12u1
-ARG CHROMIUM_PACKAGE_SHA256_AMD64=ddd26b17ec5008aaccf9f0acd3031c9ac62984fe98b1dbc5782670598b6d3bd9
-ARG CHROMIUM_PACKAGE_SHA256_ARM64=4df7ba070ef3d4e8e1bcb020d9a2a3e111f964456ac19bb728aa28434b880f7b
-ARG CHROMIUM_COMMON_PACKAGE_SHA256_AMD64=574470643af1492e222c85a1f051a20207951f5d3c4b9ea82f8d1f3b1368eb77
-ARG CHROMIUM_COMMON_PACKAGE_SHA256_ARM64=9798dbacdab0f97050b055edfe00843f57ca2f575d14e4cc239cf00f1d445c3b
-ARG CHROMIUM_SANDBOX_PACKAGE_SHA256_AMD64=c397d185b57e000ed10d20c6ccdae7c8d6f66c3df35bcb428e8d67c299cb953b
-ARG CHROMIUM_SANDBOX_PACKAGE_SHA256_ARM64=2712811e3e1ccb4bb8907745ef5b832abe29011fc937052f06535e4dfba2b083
-ARG CLAUDE_CODE_VERSION=2.1.276
+ARG CHROMIUM_DEBIAN_VERSION=153.0.8010.52-1~deb12u1
+ARG CHROMIUM_PACKAGE_SHA256_AMD64=ac40026c10d0a8c2bb699035873ca33440566033068b1abdc19cbe7c861ff11f
+ARG CHROMIUM_PACKAGE_SHA256_ARM64=a7bba2726939dfa0484dee3f9c4da46761e32a7b0ee97ffc7040be1582dc5824
+ARG CHROMIUM_COMMON_PACKAGE_SHA256_AMD64=7c674dbd4d188108904f7c4117f12ae1c7e0557ebb64ba77964c6b903bbd061a
+ARG CHROMIUM_COMMON_PACKAGE_SHA256_ARM64=9e5f90c9643dcbe2964e16d5972e4e7f76c18b1cad7845855116a4890895884d
+ARG CHROMIUM_SANDBOX_PACKAGE_SHA256_AMD64=08f35c0b27fe17c985f2dca6995e9fc006f3f406534c1e8800ac15ba75df90ec
+ARG CHROMIUM_SANDBOX_PACKAGE_SHA256_ARM64=0b2cf9c09495674f193e950d9af9789c3fa65ddbf40a3c5522c65cb32b74a075
+ARG CLAUDE_CODE_VERSION=2.1.281
 ARG CLAUDE_INSTALLER_SHA256=3a68d3406cf674e17bed1733a4dcf37805e2e47d87417700007d7e1aa766a944
-ARG CLAUDE_BINARY_SHA256_AMD64=8a56c8a14bd3cb246e2bdb7e60aefe0f609bff78c8bbcc5ea6b1817c111c6145
-ARG CLAUDE_BINARY_SHA256_ARM64=e9ac3df956083645578a382ad64ec304468666e362c33bfdefd803cd6ff596b0
+ARG CLAUDE_BINARY_SHA256_AMD64=56fe3da88458465fb27d7e9299dddb3fead55750fb9c2de795f233b5eea6dce1
+ARG CLAUDE_BINARY_SHA256_ARM64=dd27b36438a4fed1670cd29bad2fda6a73b628b6da55443e5c2f647fe6ed328f
 ARG JUNIE_VERSION=3196.5
 ARG JUNIE_ARCHIVE_SHA256_AMD64=dfe7635595f87c6e6d2a3acfe239b2bcb54ceaef4df41f0ca1044ed0ae37aa01
 ARG JUNIE_ARCHIVE_SHA256_ARM64=ac43e6b9ab512b94c57b1d12d52ac35131eb8dbcfb55b42f7fb1e8cd2dd76a98
@@ -207,9 +207,9 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
 ARG YQ_VERSION=4.53.6
 ARG YQ_SHA256_AMD64=c5f056448f973ae7d39b5401949648a78f2dc1947d6a8eb65be60d5c504b9385
 ARG YQ_SHA256_ARM64=88a1016bc1d657375a35864e4f44b6f333df8ff97b559f51bba0adcb2169df09
-ARG ATUIN_VERSION=18.22.0
-ARG ATUIN_SHA256_AMD64=b3c123df1887cf27c6480a87d148c86831cd83da478e0a8ab773ca188f3f3222
-ARG ATUIN_SHA256_ARM64=76d12818e3dff64ddac3b9f4ec63b305070ddcf5fc382a2a23dc0826fa9bf5a8
+ARG ATUIN_VERSION=18.23.0
+ARG ATUIN_SHA256_AMD64=d1b40dd6e7cd3d823867ffe22b39a025bc420f7875926ae9ca974155378da14d
+ARG ATUIN_SHA256_ARM64=faf91adc71e6b661b21ed4f486babbd7af9d17363d4276da4a0251f83c72498d
 RUN set -eux; \
     case "$TARGETARCH" in \
       amd64) YQ_SHA256="$YQ_SHA256_AMD64"; ATUIN_SHA256="$ATUIN_SHA256_AMD64"; ATUIN_TARGET=x86_64-unknown-linux-musl ;; \
@@ -354,9 +354,9 @@ RUN npm install -g npm@12.0.2 && \
 RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm i -g \
     playwright@1.63.0 \
     typescript@7.0.2 tsx@4.23.13 \
-    pnpm@12.4.2 \
-    vite@8.3.0 esbuild@0.28.2 \
-    eslint@10.10.0 prettier@3.9.8 \
+    pnpm@12.6.0 \
+    vite@8.3.1 esbuild@0.28.2 \
+    eslint@10.11.0 prettier@3.9.9 \
     serve@14.2.6 nodemon@3.1.14 concurrently@10.0.5 \
     dotenv-cli@11.0.0
 
@@ -548,7 +548,7 @@ RUN curl --disable --retry 8 --retry-all-errors --retry-max-time 300 --remove-on
     rm -f "/tmp/setuptools-${SETUPTOOLS_VERSION}-py3-none-any.whl"
 
 # ---------- AI CLI providers ----------
-RUN npm i -g @google/gemini-cli@0.60.0 @openai/codex@0.155.0 task-master-ai@0.43.1
+RUN npm i -g @google/gemini-cli@0.61.0 @openai/codex@0.156.1 task-master-ai@0.43.1
 USER claude
 RUN CURSOR_ASSET_ARCH=$(case "$TARGETARCH" in amd64) echo "x64";; arm64) echo "arm64";; *) echo "Unsupported TARGETARCH: $TARGETARCH" >&2; exit 1;; esac) && \
     CURSOR_ARCHIVE_SHA256=$(case "$TARGETARCH" in amd64) echo "$CURSOR_ARCHIVE_SHA256_AMD64";; arm64) echo "$CURSOR_ARCHIVE_SHA256_ARM64";; *) echo "Unsupported TARGETARCH: $TARGETARCH" >&2; exit 1;; esac) && \
@@ -608,8 +608,8 @@ USER root
 
 # ---------- OpenCode CLI (full only) ----------
 RUN if [ "$VARIANT" = "full" ]; then \
-    npm i -g --allow-scripts=opencode-ai opencode-ai@1.18.31; \
-    test "$(opencode --version)" = "1.18.31"; \
+    npm i -g --allow-scripts=opencode-ai opencode-ai@1.18.32; \
+    test "$(opencode --version)" = "1.18.32"; \
     fi
 
 # ---------- Pi Coding Agent (full only) ----------

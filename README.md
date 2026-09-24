@@ -41,7 +41,7 @@ One command. Full AI development workstation. Claude Code, web UI, headless brow
 
 You know the drill. You want Claude Code. But you also want it in a browser. With a headless browser for screenshots and testing. With Playwright configured. With every AI CLI. With TypeScript, Python, deployment tools, database clients, GitHub CLI.
 
-v1.6.2 updates Node 26.9.0, Debian Chromium 153.0.8010.47, the bundled AI and deployment CLIs, Python utilities, Playwright bindings and pinned security overlays. CloudCLI's copied SQLite metadata now matches the verified Node 26 artifact, and Vercel's two installed `tar` layouts are both checked before the checksum-bound replacement is applied. The Docker client remains an opt-in Full-derived recipe; stock images still ship without it.
+v1.6.3 updates Debian Chromium to 153.0.8010.52, Claude Code to 2.1.281, Atuin to 18.23.0, and seven bundled npm tools. Node stays at the verified 26.9.0 build because a newer runtime must first pass CloudCLI's native-module compatibility check. The Docker client remains an opt-in Full-derived recipe; stock images still ship without it.
 
 Release-sensitive facts are also published in [`contracts/product-facts.json`](contracts/product-facts.json). The release workflow checks that contract against the Dockerfile and Compose files before building images.
 
@@ -612,9 +612,9 @@ This is not a minimal container. This is an entire development workstation.
 
 | CLI | Command | Version | What it's for |
 |-----|---------|---------|---------------|
-| **Claude Code** | `claude` | 2.1.276 | The main event — you're running inside this |
-| **Gemini CLI** | `gemini` | 0.60.0 | Google's AI coding agent |
-| **OpenAI Codex** | `codex` | 0.155.0 | OpenAI's coding agent |
+| **Claude Code** | `claude` | 2.1.281 | The main event — you're running inside this |
+| **Gemini CLI** | `gemini` | 0.61.0 | Google's AI coding agent |
+| **OpenAI Codex** | `codex` | 0.156.1 | OpenAI's coding agent |
 | **Cursor** | `cursor` | `2026.09.15-d2fe57e` | Cursor's AI agent |
 | **TaskMaster AI** | `task-master` | 0.43.1 | Task planning and orchestration |
 
@@ -632,7 +632,7 @@ The full image includes everything above, plus:
 | CLI | Command | Version | What it's for |
 |-----|---------|---------|---------------|
 | **Junie** | `junie` | 3196.5 | JetBrains' AI coding agent |
-| **OpenCode** | `opencode` | 1.18.31 | Open source AI agent (OpenRouter and other providers) |
+| **OpenCode** | `opencode` | 1.18.32 | Open source AI agent (OpenRouter and other providers) |
 | **Pi Coding Agent** | `pi` | 0.85.1 | Minimal agent harness (multiple providers) |
 
 </details>

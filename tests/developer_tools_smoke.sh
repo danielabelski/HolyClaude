@@ -209,7 +209,7 @@ main().catch(error => {
 NODE
 fi
 
-test "$(pnpm --version)" = 12.4.2
+test "$(pnpm --version)" = 12.6.0
 mkdir "$test_dir/dep" "$test_dir/project"
 printf '%s\n' '{"name":"local-smoke-dep","version":"1.0.0","main":"index.js"}' > "$test_dir/dep/package.json"
 printf '%s\n' 'module.exports = 42;' > "$test_dir/dep/index.js"

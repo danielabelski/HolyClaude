@@ -266,11 +266,11 @@ function configureArchitectureAllReview(data, {
     vulnerability: { name: 'CVE-2099-0001' },
     products: [
       {
-        '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.2?variant=slim',
+        '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.3?variant=slim',
         subcomponents: [{ identifiers: { purl: vexPurl } }],
       },
       {
-        '@id': 'pkg:oci/docker.io/coderluii/holyclaude@1.6.2?variant=slim',
+        '@id': 'pkg:oci/docker.io/coderluii/holyclaude@1.6.3?variant=slim',
         subcomponents: [{ identifiers: { purl: vexPurl } }],
       },
     ],
@@ -787,7 +787,7 @@ test('accepts the committed advisory ledger after exact Chromium authority renew
       arch: 'amd64',
       evidenceVariant: 'slim',
       evidenceArch: 'amd64',
-      asOf: '2026-09-18',
+      asOf: '2026-09-24',
     },
   );
   assert.equal(result.status, 0, result.stderr);
@@ -822,8 +822,8 @@ test('records the full-image TIFF tool absence as exact not-affected component e
   assert.deepEqual(
     statement.products.map((product) => product['@id']).sort(),
     [
-      'pkg:oci/docker.io/coderluii/holyclaude@1.6.2?variant=full',
-      'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.2?variant=full',
+      'pkg:oci/docker.io/coderluii/holyclaude@1.6.3?variant=full',
+      'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.3?variant=full',
     ],
   );
   const expectedPurls = ['amd64', 'arm64'].flatMap((architecture) =>
@@ -1253,7 +1253,7 @@ test('rejects a not-affected review without the Docker Hub product scope', () =>
       '@id': 'urn:test:vex:example',
       vulnerability: { name: 'CVE-2099-0001' },
       products: [{
-        '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.2?variant=full',
+        '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.3?variant=full',
         subcomponents: [
           { identifiers: { purl: 'pkg:deb/debian/example-package@1.0.0?arch=amd64' } },
           { identifiers: { purl: 'pkg:deb/debian/example-package@1.0.0?arch=arm64' } },
@@ -1290,8 +1290,8 @@ test('rejects statement-level vulnerability aliases', () => {
       vulnerability: { name: 'CVE-2099-0001' },
       aliases: ['CVE-2099-0002'],
       products: [
-        { '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.2?variant=full' },
-        { '@id': 'pkg:oci/docker.io/coderluii/holyclaude@1.6.2?variant=full' },
+        { '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.3?variant=full' },
+        { '@id': 'pkg:oci/docker.io/coderluii/holyclaude@1.6.3?variant=full' },
       ],
       status: 'not_affected',
       justification: 'vulnerable_code_not_present',
@@ -1311,8 +1311,8 @@ test('rejects a not-affected product without exact component subcomponents', () 
       '@id': 'urn:test:vex:example',
       vulnerability: { name: 'CVE-2099-0001' },
       products: [
-        { '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.2?variant=full' },
-        { '@id': 'pkg:oci/docker.io/coderluii/holyclaude@1.6.2?variant=full' },
+        { '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.3?variant=full' },
+        { '@id': 'pkg:oci/docker.io/coderluii/holyclaude@1.6.3?variant=full' },
       ],
       status: 'not_affected',
       justification: 'vulnerable_code_not_present',
@@ -1339,11 +1339,11 @@ test('emits digest-bound OpenVEX with the exact component subcomponent', () => {
         vulnerability: { name: 'CVE-2099-0001' },
         products: [
           {
-            '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.2?variant=full',
+            '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.3?variant=full',
             subcomponents: [{ identifiers: { purl: componentPurl } }],
           },
           {
-            '@id': 'pkg:oci/docker.io/coderluii/holyclaude@1.6.2?variant=full',
+            '@id': 'pkg:oci/docker.io/coderluii/holyclaude@1.6.3?variant=full',
             subcomponents: [{ identifiers: { purl: componentPurl } }],
           },
         ],
@@ -1588,11 +1588,11 @@ test('rejects unexpected review fields and orphan OpenVEX statements', () => {
       vulnerability: { '@id': 'https://nvd.nist.gov/vuln/detail/CVE-2099-0002', name: 'CVE-2099-0002' },
       products: [
         {
-          '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.2?variant=full',
+          '@id': 'pkg:oci/ghcr.io/coderluii/holyclaude@1.6.3?variant=full',
           subcomponents: [{ identifiers: { purl: 'pkg:deb/debian/orphan@1.0.0?arch=amd64' } }],
         },
         {
-          '@id': 'pkg:oci/docker.io/coderluii/holyclaude@1.6.2?variant=full',
+          '@id': 'pkg:oci/docker.io/coderluii/holyclaude@1.6.3?variant=full',
           subcomponents: [{ identifiers: { purl: 'pkg:deb/debian/orphan@1.0.0?arch=amd64' } }],
         },
       ],

@@ -4,6 +4,19 @@ All notable changes to HolyClaude will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.6.3] - 09/24/2026
+
+### Changed
+
+- Updated Debian Chromium to 153.0.8010.52 using checksum-pinned Bookworm security packages for AMD64 and ARM64.
+- Updated Claude Code to 2.1.281, Gemini CLI to 0.61.0, Codex to 0.156.1, OpenCode to 1.18.32, and Atuin to 18.23.0.
+- Updated pnpm to 12.6.0, Vite to 8.3.1, ESLint to 10.11.0, and Prettier to 3.9.9.
+
+### Security
+
+- Updated Bookworm `libde265-0` to `1.0.11-1+deb12u3` and retired the reviews tied to its previous package version.
+- Temporarily accepted nine newly reported High advisories in installed Bookworm packages through October 1, 2026. The exact packages, versions, image variants, and expiration are recorded in [security reviews](https://github.com/CoderLuii/HolyClaude/blob/v1.6.3/security/advisory-reviews.json); the affected packages are not claimed to be fixed.
+
 ## [1.6.2] - 09/18/2026
 
 ### Changed

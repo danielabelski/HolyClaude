@@ -33,9 +33,9 @@ test('pins the verified Node 26.9.0 runtime and CloudCLI build provenance', () =
 
 test('pins the verified native binary candidates and runtime contracts', () => {
   for (const expected of [
-    'ARG CLAUDE_CODE_VERSION=2.1.276',
-    'ARG CLAUDE_BINARY_SHA256_AMD64=8a56c8a14bd3cb246e2bdb7e60aefe0f609bff78c8bbcc5ea6b1817c111c6145',
-    'ARG CLAUDE_BINARY_SHA256_ARM64=e9ac3df956083645578a382ad64ec304468666e362c33bfdefd803cd6ff596b0',
+    'ARG CLAUDE_CODE_VERSION=2.1.281',
+    'ARG CLAUDE_BINARY_SHA256_AMD64=56fe3da88458465fb27d7e9299dddb3fead55750fb9c2de795f233b5eea6dce1',
+    'ARG CLAUDE_BINARY_SHA256_ARM64=dd27b36438a4fed1670cd29bad2fda6a73b628b6da55443e5c2f647fe6ed328f',
     'ARG GITHUB_CLI_VERSION=2.101.0',
     'ARG GITHUB_CLI_PACKAGE_SHA256_AMD64=f876a3b87bf67c94f773d17becca4dc7340b056dab901473a9260ee2a73e237b',
     'ARG GITHUB_CLI_PACKAGE_SHA256_ARM64=9aec87f9a011b1521556b06cb003776e7e214144c8efd2144924a28d90c23057',
@@ -48,10 +48,10 @@ test('pins the verified native binary candidates and runtime contracts', () => {
     'ARG JUNIE_ARCHIVE_SHA256_ARM64=ac43e6b9ab512b94c57b1d12d52ac35131eb8dbcfb55b42f7fb1e8cd2dd76a98',
   ]) assert.ok(dockerfile.includes(expected), `Dockerfile should bind ${expected}`);
 
-  assert.equal(productFacts.aiClis.find((cli) => cli.id === 'claude-code')?.version, '2.1.276');
+  assert.equal(productFacts.aiClis.find((cli) => cli.id === 'claude-code')?.version, '2.1.281');
   assert.equal(productFacts.aiClis.find((cli) => cli.id === 'cursor-agent')?.version, '2026.09.15-d2fe57e');
   assert.equal(productFacts.aiClis.find((cli) => cli.id === 'junie')?.version, '3196.5');
-  assert.match(runtimeChecks, /require_eq "Claude Code version"[^\n]+"2\.1\.276"/);
+  assert.match(runtimeChecks, /require_eq "Claude Code version"[^\n]+"2\.1\.281"/);
   assert.match(runtimeChecks, /require_eq "GitHub CLI version"[^\n]+"2\.101\.0"/);
   assert.match(additionalLinuxRuntimeChecks, /require_package gh '2\.101\.0'/);
   assert.match(additionalLinuxRuntimeChecks, /gh version 2\.101\.0/);
@@ -95,6 +95,6 @@ test('updates the optional Docker client without changing Compose', () => {
 });
 
 test('uses the newly signed Chromium 153 Bookworm security binaries', () => {
-  assert.match(dockerfile, /ARG CHROMIUM_DEBIAN_VERSION=153\.0\.8010\.47-2~deb12u1/);
+  assert.match(dockerfile, /ARG CHROMIUM_DEBIAN_VERSION=153\.0\.8010\.52-1~deb12u1/);
   assert.doesNotMatch(dockerfile, /152\.0\.7977\.82-1~deb12u1/);
 });

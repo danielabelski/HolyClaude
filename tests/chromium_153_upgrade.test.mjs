@@ -7,14 +7,14 @@ const facts = JSON.parse(readFileSync('contracts/product-facts.json', 'utf8'));
 const ledger = JSON.parse(readFileSync('security/advisory-reviews.json', 'utf8'));
 const immutableInputs = readFileSync('security/immutable-inputs.yml', 'utf8');
 
-const version = '153.0.8010.47-2~deb12u1';
+const version = '153.0.8010.52-1~deb12u1';
 const packageBindings = [
-  ['CHROMIUM_PACKAGE_SHA256_AMD64', 'amd64-chromium-package-sha256', 'ddd26b17ec5008aaccf9f0acd3031c9ac62984fe98b1dbc5782670598b6d3bd9'],
-  ['CHROMIUM_PACKAGE_SHA256_ARM64', 'arm64-chromium-package-sha256', '4df7ba070ef3d4e8e1bcb020d9a2a3e111f964456ac19bb728aa28434b880f7b'],
-  ['CHROMIUM_COMMON_PACKAGE_SHA256_AMD64', 'amd64-chromium-common-package-sha256', '574470643af1492e222c85a1f051a20207951f5d3c4b9ea82f8d1f3b1368eb77'],
-  ['CHROMIUM_COMMON_PACKAGE_SHA256_ARM64', 'arm64-chromium-common-package-sha256', '9798dbacdab0f97050b055edfe00843f57ca2f575d14e4cc239cf00f1d445c3b'],
-  ['CHROMIUM_SANDBOX_PACKAGE_SHA256_AMD64', 'amd64-chromium-sandbox-package-sha256', 'c397d185b57e000ed10d20c6ccdae7c8d6f66c3df35bcb428e8d67c299cb953b'],
-  ['CHROMIUM_SANDBOX_PACKAGE_SHA256_ARM64', 'arm64-chromium-sandbox-package-sha256', '2712811e3e1ccb4bb8907745ef5b832abe29011fc937052f06535e4dfba2b083'],
+  ['CHROMIUM_PACKAGE_SHA256_AMD64', 'amd64-chromium-package-sha256', 'ac40026c10d0a8c2bb699035873ca33440566033068b1abdc19cbe7c861ff11f'],
+  ['CHROMIUM_PACKAGE_SHA256_ARM64', 'arm64-chromium-package-sha256', 'a7bba2726939dfa0484dee3f9c4da46761e32a7b0ee97ffc7040be1582dc5824'],
+  ['CHROMIUM_COMMON_PACKAGE_SHA256_AMD64', 'amd64-chromium-common-package-sha256', '7c674dbd4d188108904f7c4117f12ae1c7e0557ebb64ba77964c6b903bbd061a'],
+  ['CHROMIUM_COMMON_PACKAGE_SHA256_ARM64', 'arm64-chromium-common-package-sha256', '9e5f90c9643dcbe2964e16d5972e4e7f76c18b1cad7845855116a4890895884d'],
+  ['CHROMIUM_SANDBOX_PACKAGE_SHA256_AMD64', 'amd64-chromium-sandbox-package-sha256', '08f35c0b27fe17c985f2dca6995e9fc006f3f406534c1e8800ac15ba75df90ec'],
+  ['CHROMIUM_SANDBOX_PACKAGE_SHA256_ARM64', 'arm64-chromium-sandbox-package-sha256', '0b2cf9c09495674f193e950d9af9789c3fa65ddbf40a3c5522c65cb32b74a075'],
 ];
 const chromiumPackageNames = new Set(['chromium', 'chromium-common', 'chromium-sandbox']);
 const retiredChromiumVersions = new Set([
@@ -56,7 +56,7 @@ test('rejects immutable Chromium inputs whose architecture hashes are swapped', 
 });
 
 test('publishes Chromium 153 as the product and runtime fact', () => {
-  assert.equal(facts.browser.chromium.version, '153.0.8010.47');
+  assert.equal(facts.browser.chromium.version, '153.0.8010.52');
   for (const path of [
     'README.md',
     'docs/architecture.md',
@@ -65,7 +65,7 @@ test('publishes Chromium 153 as the product and runtime fact', () => {
     'config/claude-memory-slim.md',
     'THIRD-PARTY-NOTICES',
   ]) {
-    assert.match(readFileSync(path, 'utf8'), /153\.0\.8010\.47/, path);
+    assert.match(readFileSync(path, 'utf8'), /153\.0\.8010\.52/, path);
   }
 });
 
